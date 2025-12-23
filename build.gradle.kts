@@ -25,16 +25,19 @@ repositories {
     maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
-extra["springAiVersion"] = "1.0.0-M4"
+extra["springAiVersion"] = "1.0.0-M5"
 
 dependencies {
     // Spring Boot
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     
-    // Spring AI with MCP support
-    implementation("org.springframework.ai:spring-ai-mcp-spring-boot-starter")
+    // Spring AI
     implementation("org.springframework.ai:spring-ai-openai-spring-boot-starter")
+    
+    // JSON processing
+    implementation("com.fasterxml.jackson.core:jackson-databind")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
     
     // Database
     runtimeOnly("com.h2database:h2")
